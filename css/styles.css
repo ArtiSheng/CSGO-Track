@@ -1,0 +1,38 @@
+/* 卡片过渡效果 */
+.clickable-card {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.clickable-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    opacity: 0.9;
+}
+
+/* 确保图表容器有合适的尺寸 */
+#statsChart {
+    width: 100%;
+    height: 100%;
+}
+
+/* 调整图表容器的外边距 */
+.chart-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* 添加数据卡片的基本样式 */
+.card {
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.card-header {
+    font-weight: bold;
+}
+
+.card-body {
+    padding: 20px;
+}

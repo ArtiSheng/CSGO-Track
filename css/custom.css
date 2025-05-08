@@ -1,0 +1,1766 @@
+/* 移动端水平布局控制面板样式 */
+.mobile-horizontal-layout {
+    display: block !important;
+}
+
+.mobile-horizontal-layout .d-flex {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: flex-start !important;
+}
+
+.mobile-horizontal-layout .btn-group,
+.mobile-horizontal-layout .dropdown {
+    width: auto !important;
+    flex: 0 0 auto !important;
+}
+
+.mobile-horizontal-layout .dropdown-toggle {
+    width: auto !important;
+}
+
+/* 自定义CSS */
+
+:root {
+  --primary-color: #5179d6;
+  --primary-light: rgba(81, 121, 214, 0.1);
+  --primary-dark: #3867c8;
+  --secondary-color: #6c757d;
+  --success-color: #82b54b;
+  --danger-color: #e56767;
+  --info-color: #5ccdde;
+  --warning-color: #ffc107;
+  --dark-color: #343a40;
+  --light-color: #f8f9fa;
+  --body-bg: #f6f7f8;
+  --card-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  --card-shadow-hover: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  --gradient-primary: linear-gradient(135deg, #4c70c9 0%, #5e8aed 100%);
+  --gradient-success: linear-gradient(135deg, #75a342 0%, #8fc356 100%);
+  --gradient-info: linear-gradient(135deg, #4dbfd0 0%, #6cdbec 100%);
+  --gradient-warning: linear-gradient(135deg, #e6ac00 0%, #ffd54f 100%);
+  --gradient-danger: linear-gradient(135deg, #d45a5a 0%, #ee7979 100%);
+  --primary: #0d6efd;
+  --secondary: #6c757d;
+  --success: #198754;
+  --info: #0dcaf0;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --light: #f8f9fa;
+  --dark: #212529;
+}
+
+/* 全局样式 */
+html {
+  height: auto;
+  overflow-y: auto !important;
+}
+
+body {
+  cursor: default;
+  min-height: 100%;
+  height: auto;
+  overflow-x: hidden;
+  overflow-y: auto !important;
+  position: relative;
+  background-color: var(--body-bg);
+}
+
+/* 增强滚动效果 - 只有在JavaScript控制下才会激活 */
+html.scrolling {
+  scroll-behavior: smooth;
+}
+
+/* 响应鼠标滑动效果的全局元素 */
+a, button, .btn, .card, .hero-bubble, .dropdown-item, 
+.table tbody tr, .nav-link, .drag-handle, .stat-card {
+  will-change: transform, opacity, box-shadow, background-color;
+}
+
+/* 为所有可点击元素添加鼠标悬停指针 */
+a, button, .btn, .dropdown-item, .nav-link, 
+.sell-skin, .view-history, .delete-skin, .sort-option, .order-option {
+  cursor: pointer;
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--light-color);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--secondary-color);
+  border-radius: 5px;
+  border: 2px solid var(--light-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color);
+}
+
+/* 页面容器 */
+#page-container {
+  min-height: 100vh;
+  background-color: var(--body-bg);
+  transition: all 0.3s ease;
+  position: relative;
+  height: auto;
+  overflow: visible !important;
+  margin-top: -10px; /* 减少页面顶部空白区域 */
+}
+
+/* 页面头部 */
+#page-header {
+  box-shadow: 0 0.125rem 0.3rem rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.85); /* 增加透明度 */
+  backdrop-filter: blur(15px); /* 增强模糊效果 */
+  -webkit-backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+}
+
+#page-header .content-header {
+  padding: 0.75rem 0; /* 减小头部高度 */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand-logo {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s;
+}
+
+.brand-logo:hover {
+  transform: scale(1.05);
+}
+
+.brand-text-primary {
+  color: var(--primary-color);
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 主内容区域 */
+#main-container {
+  padding-top: 0.25rem; /* 进一步减少顶部空白区域 */
+  padding-bottom: 2rem;
+  overflow: visible !important;
+  transform-style: flat !important;
+}
+
+/* 滚动时的视差效果 - 仅在特定元素上应用，而不是全局 */
+@media (min-width: 992px) {
+  .parallax-scroll {
+    will-change: transform;
+    transform: translateZ(0);
+  }
+  
+  .parallax-scroll-slow {
+    transition: transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  
+  .parallax-scroll-fast {
+    transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+}
+
+/* 气泡背景 */
+.bg-body-extra-light {
+  background-color: var(--light-color);
+  padding: 1.5rem 0; /* 减少内部填充 */
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  background: rgba(248, 249, 250, 0.7);
+  z-index: 1;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  margin-top: 0.25rem; /* 进一步减少上方空白区域 */
+  margin-bottom: 1rem; /* 减少投资概览与列表之间的间距 */
+}
+
+.hero-bubbles {
+  padding: 1.25rem 0; /* 减少填充 */
+  position: relative;
+}
+
+.hero-bubble {
+  transition: transform 0.5s ease, opacity 0.5s ease, filter 0.5s ease;
+  filter: blur(3px);
+  opacity: 0.2;
+}
+
+.hero-bubble:hover {
+  transform: scale(1.5);
+  opacity: 0.6;
+  filter: blur(1px);
+}
+
+/* 卡片样式 */
+.card {
+  border: none;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  margin-bottom: 1rem; /* 添加底部margin */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.07);
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+.card .card-header {
+  font-weight: 600;
+  background-color: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+  padding: 0.75rem 1rem; /* 减少头部填充 */
+  border-top-left-radius: 0.5rem;  /* 确保表头圆角 */
+  border-top-right-radius: 0.5rem; /* 确保表头圆角 */
+}
+
+/* 统一所有统计卡片的高度并采用flex布局 */
+.stat-card {
+  height: 100%;
+  transition: all 0.3s ease;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  border: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-card .card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100%;
+  padding: 1.25rem; /* 减少内部填充，保持卡片紧凑 */
+  transition: all 0.3s;
+}
+
+.stat-card:hover .card-body {
+  transform: translateY(-5px);
+}
+
+.stat-card:hover {
+  transform: translateY(-7px) scale(1.03);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.stat-card .card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  opacity: 0.9;
+}
+
+.stat-card .card-text {
+  font-size: 1.75rem;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  margin-top: auto;
+}
+
+.stat-card .mb-0 {
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+
+/* 修改统计卡片的背景色为更柔和的渐变 */
+.stat-card.bg-primary {
+  background: linear-gradient(135deg, #6987c5 0%, #7a98d6 100%) !important;
+}
+
+.stat-card.bg-success {
+  background: linear-gradient(135deg, #6fa356 0%, #80b466 100%) !important;
+}
+
+.stat-card.bg-info {
+  background: linear-gradient(135deg, #5eb7c5 0%, #6fc8d6 100%) !important;
+}
+
+.stat-card.bg-danger {
+  background: linear-gradient(135deg, #d67e7e 0%, #e78f8f 100%) !important;
+}
+
+/* 全局按钮样式修改为更淡雅的配色 */
+.btn {
+  border-radius: 0.25rem;
+  padding: 0.375rem 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  /* 确保按钮内容始终可见 */
+  visibility: visible !important;
+  opacity: 1 !important;
+  box-shadow: none;
+}
+
+/* 主要按钮样式 - 更柔和的蓝色 */
+.btn-alt-primary {
+  color: #6987c5;
+  background-color: rgba(105, 135, 197, 0.08);
+  border-color: transparent;
+}
+
+.btn-alt-primary:hover {
+  background-color: rgba(105, 135, 197, 0.15);
+  color: #5a78b6;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(105, 135, 197, 0.15);
+}
+
+.btn-alt-primary.active {
+  background: linear-gradient(135deg, #6987c5 0%, #7a98d6 100%);
+  color: white;
+  box-shadow: 0 2px 8px rgba(105, 135, 197, 0.3);
+}
+
+/* 成功按钮样式 - 更柔和的绿色 */
+.btn-alt-success {
+  color: #6fa356;
+  background-color: rgba(111, 163, 86, 0.08);
+  border-color: transparent;
+}
+
+.btn-alt-success:hover {
+  background-color: rgba(111, 163, 86, 0.15);
+  color: #60944a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(111, 163, 86, 0.15);
+}
+
+.btn-alt-success.active {
+  background: linear-gradient(135deg, #6fa356 0%, #80b466 100%);
+  color: white;
+  box-shadow: 0 2px 8px rgba(111, 163, 86, 0.3);
+}
+
+/* 信息按钮样式 - 更柔和的蓝绿色 */
+.btn-alt-info {
+  color: #5eb7c5;
+  background-color: rgba(94, 183, 197, 0.08);
+  border-color: transparent;
+}
+
+.btn-alt-info:hover {
+  background-color: rgba(94, 183, 197, 0.15);
+  color: #4fa8b6;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(94, 183, 197, 0.15);
+}
+
+.btn-alt-info.active {
+  background: linear-gradient(135deg, #5eb7c5 0%, #6fc8d6 100%);
+  color: white;
+  box-shadow: 0 2px 8px rgba(94, 183, 197, 0.3);
+}
+
+/* 次要按钮样式 - 更柔和的灰色 */
+.btn-alt-secondary {
+  color: #889099;
+  background-color: rgba(136, 144, 153, 0.08);
+  border-color: transparent;
+}
+
+.btn-alt-secondary:hover {
+  background-color: rgba(136, 144, 153, 0.15);
+  color: #7a828a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(136, 144, 153, 0.15);
+}
+
+.btn-alt-secondary.active {
+  background: linear-gradient(135deg, #889099 0%, #98a0a9 100%);
+  color: white;
+  box-shadow: 0 2px 8px rgba(136, 144, 153, 0.3);
+}
+
+/* 危险按钮样式 - 更柔和的红色 */
+.btn-alt-danger {
+  color: #d67e7e;
+  background-color: rgba(214, 126, 126, 0.08);
+  border-color: transparent;
+}
+
+.btn-alt-danger:hover {
+  background-color: rgba(214, 126, 126, 0.15);
+  color: #c76e6e;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(214, 126, 126, 0.15);
+}
+
+.btn-alt-danger.active {
+  background: linear-gradient(135deg, #d67e7e 0%, #e78f8f 100%);
+  color: white;
+  box-shadow: 0 2px 8px rgba(214, 126, 126, 0.3);
+}
+
+/* 按钮组控制（未售出/已售出、单独显示/合并显示等） */
+/* 未售出按钮 */
+#showActiveSkins {
+  color: #6fa356;
+  background-color: rgba(111, 163, 86, 0.08);
+  border-color: transparent;
+}
+
+#showActiveSkins:hover {
+  background-color: rgba(111, 163, 86, 0.15);
+  color: #60944a;
+}
+
+#showActiveSkins.active {
+  background: linear-gradient(135deg, #6fa356 0%, #80b466 100%);
+  color: white;
+  box-shadow: 0 2px 8px rgba(111, 163, 86, 0.3);
+}
+
+/* 已售出按钮 */
+#showSoldSkins {
+  color: #d67e7e;
+  background-color: rgba(214, 126, 126, 0.08);
+  border-color: transparent;
+}
+
+#showSoldSkins:hover {
+  background-color: rgba(214, 126, 126, 0.15);
+  color: #c76e6e;
+}
+
+#showSoldSkins.active {
+  background: linear-gradient(135deg, #d67e7e 0%, #e78f8f 100%);
+  color: white;
+  box-shadow: 0 2px 8px rgba(214, 126, 126, 0.3);
+}
+
+/* 显示模式按钮（单独显示/合并显示） */
+#showSeparate, #showMerged {
+  color: #5eb7c5;
+  background-color: rgba(94, 183, 197, 0.08);
+  border-color: transparent;
+}
+
+#showSeparate:hover, #showMerged:hover {
+  background-color: rgba(94, 183, 197, 0.15);
+  color: #4fa8b6;
+}
+
+#showSeparate.active, #showMerged.active {
+  background: linear-gradient(135deg, #5eb7c5 0%, #6fc8d6 100%);
+  color: white;
+  box-shadow: 0 2px 8px rgba(94, 183, 197, 0.3);
+}
+
+/* 排序下拉按钮 */
+#sortDropdown {
+  color: #6987c5;
+  background-color: rgba(105, 135, 197, 0.08);
+  border-color: transparent;
+}
+
+#sortDropdown:hover {
+  background-color: rgba(105, 135, 197, 0.15);
+  color: #5a78b6;
+  box-shadow: 0 4px 10px rgba(105, 135, 197, 0.15);
+}
+
+#sortDropdown[aria-expanded="true"] {
+  background: linear-gradient(135deg, #6987c5 0%, #7a98d6 100%);
+  color: white;
+  box-shadow: 0 2px 8px rgba(105, 135, 197, 0.3);
+}
+
+/* 排序方向按钮 */
+.order-option {
+  color: #889099;
+  background-color: rgba(136, 144, 153, 0.08);
+  border-color: transparent;
+}
+
+.order-option:hover {
+  background-color: rgba(136, 144, 153, 0.15);
+  color: #7a828a;
+}
+
+.order-option.active {
+  background: linear-gradient(135deg, #889099 0%, #98a0a9 100%);
+  color: white;
+  box-shadow: 0 2px 8px rgba(136, 144, 153, 0.3);
+}
+
+/* 下拉菜单项样式 */
+.dropdown-item {
+  transition: all 0.3s ease;
+  border-radius: 0.25rem;
+  margin: 2px 5px;
+  padding: 0.5rem 0.75rem;
+}
+
+.dropdown-item:hover {
+  background-color: rgba(81, 121, 214, 0.15);
+  transform: translateX(3px);
+}
+
+.dropdown-item.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* 下拉菜单样式 */
+.dropdown-menu {
+  border-radius: 0.5rem;
+  border: none;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  animation: dropdownFade 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-5px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* 表格样式 */
+.table {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  transition: all 0.3s;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-bottom: 0; /* 移除表格底部边距 */
+}
+
+/* 确保表格圆角正确显示 */
+.card-body .table-responsive {
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+/* 表格的滚动触发效果 */
+.table.scrolled-to tbody tr {
+  animation: slideInRows 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+/* 行动画延迟效果 */
+.table.scrolled-to tbody tr:nth-child(1) { animation-delay: 0.1s; }
+.table.scrolled-to tbody tr:nth-child(2) { animation-delay: 0.15s; }
+.table.scrolled-to tbody tr:nth-child(3) { animation-delay: 0.2s; }
+.table.scrolled-to tbody tr:nth-child(4) { animation-delay: 0.25s; }
+.table.scrolled-to tbody tr:nth-child(5) { animation-delay: 0.3s; }
+.table.scrolled-to tbody tr:nth-child(6) { animation-delay: 0.35s; }
+.table.scrolled-to tbody tr:nth-child(7) { animation-delay: 0.4s; }
+.table.scrolled-to tbody tr:nth-child(n+8) { animation-delay: 0.45s; }
+
+@keyframes slideInRows {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.table thead {
+  background: linear-gradient(to right, rgba(248, 249, 250, 0.9), rgba(248, 249, 250, 0.7));
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.table thead th {
+  font-weight: 600;
+  border-bottom: 2px solid #e9ecef;
+  transition: all 0.3s;
+  padding: 0.75rem 0.5rem;
+}
+
+.table tbody tr {
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.table tbody tr::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(81, 121, 214, 0.05);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+  z-index: -1;
+}
+
+.table tbody tr:hover {
+  transform: translateY(-3px) scale(1.005);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  z-index: 5;
+}
+
+.table tbody tr:hover::before {
+  transform: scaleX(1);
+}
+
+/* 表格单元格 */
+.table td, .table th {
+  padding: 1rem 0.75rem;
+  vertical-align: middle;
+}
+
+/* 表格按钮组 */
+.table td .btn {
+  margin: 0 3px;
+  transform-origin: center;
+  position: relative;
+  top: 0;
+  transition: all 0.3s ease;
+}
+
+/* 按钮的滚动效果 */
+.table.scrolled-to td .btn {
+  animation: buttonPop 0.5s ease-out forwards;
+  opacity: 0;
+  animation-delay: 0.6s;
+}
+
+@keyframes buttonPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 按钮悬停效果 */
+.table td .btn:hover {
+  transform: translateY(-3px) scale(1.1);
+  top: -2px;
+}
+
+/* 按钮点击效果 */
+.table td .btn:active {
+  transform: scale(0.95);
+  top: 1px;
+}
+
+/* 相邻按钮交互效果 */
+.table td .btn:hover + .btn {
+  transform: translateY(-1px) scale(1.05);
+}
+
+/* 拖动手柄 */
+.drag-handle {
+  cursor: move;
+  color: #ced4da;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.drag-handle:hover {
+  color: var(--primary-color);
+  transform: scale(1.2) rotate(10deg);
+}
+
+/* 模态框 */
+.modal-content {
+  border: none;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+.modal.show .modal-content {
+  transform: scale(1);
+  animation: modalIn 0.3s ease-out;
+}
+
+@keyframes modalIn {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.modal-header {
+  background: linear-gradient(to right, rgba(248, 249, 250, 0.9), rgba(248, 249, 250, 0.7));
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* 表单元素 */
+.form-control {
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.form-control:focus {
+  box-shadow: 0 0 0 0.25rem rgba(81, 121, 214, 0.25);
+  border-color: rgba(81, 121, 214, 0.5);
+  transform: translateY(-2px);
+}
+
+/* 添加滚动出现的效果 */
+.scroll-fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.scroll-fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 增强的移动端响应式布局 */
+@media (max-width: 768px) {
+  .stat-card .card-text {
+    font-size: 1.5rem;
+  }
+  
+  .btn:hover {
+    transform: translateY(-2px) scale(1.02);
+  }
+  
+  .card:hover {
+    transform: translateY(-3px);
+  }
+  
+  .table td .btn {
+    padding: 0.25rem 0.5rem;
+    min-width: 40px;
+  }
+
+  /* 改进移动端卡片样式 */
+  .card {
+    margin-bottom: 0.75rem;
+  }
+
+  .card-header {
+    padding: 0.75rem 0.75rem;
+  }
+
+  /* 调整投资概览区域在移动端的布局 */
+  .row.g-3 > div {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .stat-card {
+    margin-bottom: 0.5rem;
+  }
+
+  .stat-card .card-body {
+    padding: 0.75rem;
+  }
+  
+  /* 调整页面头部在移动端的布局 */
+  #page-header .content-header {
+    padding: 0.5rem 0;
+  }
+
+  .brand-logo {
+    font-size: 1.25rem;
+  }
+  
+  /* 调整头部按钮在移动端的布局 */
+  .content-header .btn {
+    font-size: 0.8rem;
+    padding: 0.25rem 0.5rem;
+  }
+  
+  /* 优化控制区按钮组在移动端的布局 */
+  .card-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .card-header h5 {
+    margin-bottom: 0.75rem;
+  }
+  
+  .card-header .d-flex {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .btn-group, .dropdown {
+    margin-bottom: 0.5rem;
+  }
+  
+  /* 优化按钮在移动端的显示 */
+  .card-header .btn-group .btn, 
+  .card-header .dropdown .btn {
+    font-size: 0.75rem !important;
+    padding: 0.25rem 0.5rem !important;
+    height: 28px !important;
+  }
+
+  /* 优化移动端饰品列表显示 */
+  .skin-list-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* 平滑滚动 */
+    scrollbar-width: thin; /* Firefox */
+  }
+
+  /* 自定义表格式布局的移动适配 */
+  .skin-list-header, 
+  .skin-item {
+    display: flex;
+    min-width: 800px; /* 确保可以横向滚动 */
+  }
+
+  /* 使表头置顶，方便用户浏览 */
+  .skin-list-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #f8f9fa;
+    border-bottom: 2px solid #dee2e6;
+  }
+
+  .skin-header-cell, 
+  .skin-item-cell {
+    padding: 0.5rem 0.25rem;
+    font-size: 0.85rem;
+  }
+
+  /* 调整列宽比例更适合移动端显示 */
+  .skin-header-name, 
+  .skin-item-name {
+    flex: 2;
+  }
+
+  /* 确保操作按钮在移动端更紧凑但可点击 */
+  .skin-item-actions .btn {
+    padding: 0.25rem 0.4rem;
+    font-size: 0.75rem;
+    margin: 0 0.1rem;
+  }
+
+  /* 改进模态框在移动端的显示 */
+  .modal-dialog {
+    margin: 0.5rem;
+    max-width: calc(100% - 1rem);
+  }
+
+  .modal-content {
+    border-radius: 0.375rem;
+  }
+
+  .modal-header {
+    padding: 0.75rem;
+  }
+
+  .modal-body {
+    padding: 0.75rem;
+  }
+
+  .modal-footer {
+    padding: 0.5rem 0.75rem;
+  }
+
+  /* 改进表单在移动端的显示 */
+  .form-label {
+    margin-bottom: 0.25rem;
+    font-size: 0.9rem;
+  }
+
+  .form-control {
+    padding: 0.375rem 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .form-text {
+    font-size: 0.75rem;
+  }
+
+  .input-group-text {
+    padding: 0.375rem 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  /* 优化下拉菜单在移动端的显示 */
+  .dropdown-menu {
+    min-width: 100px !important;
+    font-size: 0.8rem !important;
+  }
+
+  .dropdown-item {
+    padding: 0.25rem 0.5rem !important;
+    font-size: 0.8rem !important;
+  }
+  
+  /* 优化美化加载和错误状态 */
+  .skin-loading, .skin-error, .skin-empty {
+    padding: 1rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* 添加针对小屏幕手机的特殊优化 */
+@media (max-width: 480px) {
+  /* 头部区域优化 */
+  #page-header .content-header {
+    padding: 0.5rem 0;
+  }
+  
+  /* 隐藏按钮上的图标文本，只保留图标 */
+  .content-header .btn i {
+    margin-right: 0;
+  }
+  
+  .content-header .btn {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.4rem;
+  }
+
+  /* 投资概览区域在小屏手机上的进一步优化 */
+  .row.g-3 {
+    margin-left: -0.25rem;
+    margin-right: -0.25rem;
+  }
+
+  .row.g-3 > div {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
+
+  .stat-card .card-title {
+    font-size: 0.75rem;
+  }
+
+  .stat-card .card-text {
+    font-size: 1.25rem;
+  }
+
+  .stat-card .mb-0 {
+    font-size: 0.7rem;
+  }
+  
+  /* 按钮组和下拉菜单的排列方式优化 */
+  .card-header .d-flex {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .card-header .btn-group,
+  .card-header .dropdown {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+    width: 100%;
+  }
+  
+  .card-header .btn-group .btn {
+    flex: 1;
+  }
+  
+  .card-header .dropdown .btn,
+  .card-header .btn-group.mb-2 .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* 自定义表格在超小屏幕上的卡片视图布局 */
+  .mobile-card-view {
+    overflow-x: hidden !important;
+  }
+
+  .mobile-card-view .skin-list-header {
+    display: none !important; /* 隐藏表头 */
+  }
+
+  .mobile-card-view .skin-item {
+    display: block !important;
+    min-width: auto !important;
+    margin-bottom: 1rem !important;
+    padding: 0.75rem !important;
+    border-radius: 0.375rem !important;
+    background-color: white !important;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+    position: relative !important;
+    border-bottom: none !important;
+  }
+
+  /* 每个单元格显示为行 */
+  .mobile-card-view .skin-item-cell {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 0.35rem 0 !important;
+    border-bottom: 1px solid rgba(0,0,0,0.05) !important;
+    width: 100% !important;
+    font-size: 0.85rem !important;
+    text-align: left !important;
+  }
+
+  /* 为每个单元格添加标签 */
+  .mobile-card-view .skin-item-cell::before {
+    content: attr(data-label);
+    font-weight: 500;
+    color: #666;
+    flex: 0 0 40%;
+    padding-right: 0.5rem;
+  }
+
+  /* 单元格内容样式 */
+  .mobile-card-view .skin-item-cell > span {
+    text-align: right;
+    flex: 0 0 60%;
+  }
+
+  /* 名称特殊处理 */
+  .mobile-card-view .skin-item-name {
+    font-weight: 600 !important;
+    font-size: 1rem !important;
+    border-bottom: 2px solid rgba(0,0,0,0.1) !important;
+    margin-bottom: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+    color: #333 !important;
+  }
+
+  .mobile-card-view .skin-item-name::before {
+    display: none !important;
+  }
+
+  /* 操作按钮特殊处理 */
+  .mobile-card-view .skin-item-actions {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
+    gap: 0.35rem !important;
+    padding-top: 0.5rem !important;
+    margin-top: 0.5rem !important;
+    border-top: 1px solid rgba(0,0,0,0.1) !important;
+    border-bottom: none !important;
+  }
+
+  .mobile-card-view .skin-item-actions::before {
+    display: none !important;
+  }
+
+  .mobile-card-view .skin-item-actions .btn-action {
+    flex: 1 1 auto !important;
+    min-width: calc(50% - 0.35rem) !important;
+    margin: 0 !important;
+    padding: 0.3rem 0.4rem !important;
+    font-size: 0.75rem !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+  
+  /* 控制在已售出/未售出视图中显示哪些字段 */
+  .is-mobile-view.sold-view .mobile-card-view .unsold-only {
+    display: none !important;
+  }
+  
+  .is-mobile-view.unsold-view .mobile-card-view .sold-only {
+    display: none !important;
+  }
+  
+  /* 已售出和未售出图标标记 */
+  .mobile-card-view .skin-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 24px 24px 0;
+  }
+  
+  .is-mobile-view.unsold-view .mobile-card-view .skin-item::before {
+    border-color: transparent rgba(111, 163, 86, 0.5) transparent transparent;
+  }
+  
+  .is-mobile-view.sold-view .mobile-card-view .skin-item::before {
+    border-color: transparent rgba(214, 126, 126, 0.5) transparent transparent;
+  }
+}
+
+/* 表格中的操作按钮样式 */
+.btn-action {
+  padding: 2px 8px;
+  font-size: 12px;
+  margin: 0 2px;
+  border-radius: 3px;
+  transition: all 0.2s ease;
+  box-shadow: none;
+}
+
+/* 卖出按钮 - 淡雅绿色 */
+.btn-sell {
+  background-color: rgba(111, 163, 86, 0.85);
+  color: white;
+  border: none;
+}
+
+.btn-sell:hover {
+  background-color: #6fa356;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(111, 163, 86, 0.3);
+}
+
+/* 历史按钮 - 淡雅蓝色 */
+.btn-history {
+  background-color: rgba(94, 183, 197, 0.85);
+  color: white;
+  border: none;
+}
+
+.btn-history:hover {
+  background-color: #5eb7c5;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(94, 183, 197, 0.3);
+}
+
+/* 编辑按钮 - 淡雅黄色 */
+.btn-edit {
+  background-color: rgba(230, 194, 112, 0.85);
+  color: #5f5747;
+  border: none;
+}
+
+.btn-edit:hover {
+  background-color: #e6c270;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(230, 194, 112, 0.3);
+}
+
+/* 删除按钮 - 淡雅红色 */
+.btn-delete {
+  background-color: rgba(214, 126, 126, 0.85);
+  color: white;
+  border: none;
+}
+
+.btn-delete:hover {
+  background-color: #d67e7e;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(214, 126, 126, 0.3);
+}
+
+/* 调整状态文本颜色 */
+.text-success {
+  color: #6fa356 !important;
+  font-weight: 500;
+}
+
+.text-danger {
+  color: #d67e7e !important;
+  font-weight: 500;
+}
+
+/* 按钮交互状态，确保按钮在各种状态下都可见 */
+.btn-pressed {
+  transform: translateY(1px);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* 按钮激活和悬停状态 */
+.btn:hover, .btn:focus, .btn.active, .btn:active {
+  visibility: visible !important;
+  opacity: 1 !important;
+  z-index: 5;
+  outline: none !important;
+}
+
+/* 修正下拉菜单按钮行为 */
+.dropdown-toggle {
+  position: relative;
+  z-index: 10;
+}
+
+.dropdown-toggle:after {
+  display: inline-block !important;
+  margin-left: 0.255em !important;
+  vertical-align: 0.255em !important;
+  content: "" !important;
+  border-top: 0.3em solid !important;
+  border-right: 0.3em solid transparent !important;
+  border-bottom: 0 !important;
+  border-left: 0.3em solid transparent !important;
+}
+
+/* 确保下拉菜单正确显示 */
+.dropdown-menu {
+  position: absolute !important;
+  z-index: 1000 !important;
+  display: none !important;
+}
+
+.dropdown-menu.show {
+  display: block !important;
+}
+
+/* 下拉菜单项样式 */
+.dropdown-item.active, 
+.dropdown-item:active,
+.dropdown-item:hover {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* 标准按钮样式提升 */
+.btn-sm {
+  font-size: 0.85rem;
+  padding: 0.35rem 0.75rem;
+  min-width: 60px;
+  text-align: center;
+}
+
+/* 微妙的波纹效果 */
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+}
+
+.btn:hover::before {
+  opacity: 1;
+}
+
+/* 温和的点击涟漪效果 */
+.btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.2);
+  opacity: 0;
+  border-radius: 100%;
+  transform: translate(-50%, -50%) scale(1);
+  transition: all 0.3s;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.btn:active::after {
+  opacity: 0.2;
+  transform: translate(-50%, -50%) scale(8);
+  transition: all 0.2s;
+}
+
+/* 删除按钮样式 */
+.delete-skin {
+  color: #fff !important;
+  background-color: rgba(214, 126, 126, 0.85) !important;
+  border-color: transparent !important;
+}
+
+.delete-skin:hover {
+  background-color: #d67e7e !important;
+  color: #fff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(214, 126, 126, 0.15);
+}
+
+/* 下拉菜单样式 */
+.dropdown-menu {
+  border-radius: 0.5rem;
+  border: none;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  animation: dropdownFade 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-5px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* 下拉菜单项样式 */
+.dropdown-item {
+  transition: all 0.3s ease;
+  border-radius: 0.25rem;
+  margin: 2px 5px;
+  padding: 0.5rem 0.75rem;
+  color: #6c7986;
+}
+
+.dropdown-item:hover {
+  background-color: rgba(105, 135, 197, 0.1);
+  transform: translateX(3px);
+  color: #6987c5;
+}
+
+.dropdown-item.active {
+  background-color: #6987c5;
+  color: white;
+}
+
+/* 备用图标样式 - 当FontAwesome加载失败时使用 */
+.icon-fallback {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    background-color: currentColor;
+    vertical-align: text-bottom;
+}
+
+.icon-plus::before {
+    content: '+';
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 16px;
+}
+
+.icon-sync::before {
+    content: '↻';
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 16px;
+}
+
+.icon-check::before {
+    content: '✓';
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 16px;
+}
+
+.icon-save::before {
+    content: '💾';
+    font-size: 16px;
+    line-height: 16px;
+}
+
+/* 资源加载失败提示样式 */
+.resource-error {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    background: rgba(220, 53, 69, 0.9);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 4px;
+    font-size: 14px;
+    z-index: 9999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.resource-error button {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* 确保在移动设备上按钮有足够大的触摸区域 */
+.btn-action {
+    min-height: 30px;
+    min-width: 30px;
+}
+
+/* 确保表格在样式未加载的情况下仍有基本样式 */
+.skin-list-wrapper {
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+}
+
+/* 备用样式结束 */
+
+/* 移动端按钮优化 - 确保按钮在小屏幕上完整显示 */
+@media (max-width: 576px) {
+    /* 控制面板按钮组调整 */
+    .card-header .btn-group {
+        width: 100%;
+        margin-bottom: 8px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    /* 设置按钮组中的按钮宽度 */
+    .card-header .btn-group .btn {
+        flex: 1 1 auto;
+        padding: 0.375rem 0.5rem;
+        font-size: 0.85rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    /* 排序下拉菜单调整 */
+    .dropdown {
+        width: 100%;
+        margin-bottom: 8px;
+    }
+    
+    .dropdown-toggle {
+        width: 100%;
+        text-align: center;
+        padding: 0.375rem 0.5rem;
+        font-size: 0.85rem;
+    }
+    
+    /* 操作按钮容器 */
+    .card-header > div {
+        flex-direction: column;
+        align-items: stretch !important;
+    }
+    
+    /* 按钮组容器 */
+    .card-header .d-flex {
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    
+    /* 修正 me-3 在移动端的间距 */
+    .card-header .me-3 {
+        margin-right: 0 !important;
+    }
+    
+    /* 最小按钮间距 */
+    .btn + .btn {
+        margin-left: 2px;
+    }
+    
+    /* 确保饰品列表按钮样式一致 */
+    .skin-item-actions .btn-action {
+        padding: 2px 5px;
+        font-size: 11px;
+        min-width: 40px;
+    }
+    
+    /* 防止长文本破坏布局 */
+    .skin-item-name {
+        max-width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+/* 特小屏幕优化 (小于375px) */
+@media (max-width: 374px) {
+    .card-header .btn {
+        padding: 0.25rem 0.35rem;
+        font-size: 0.75rem;
+    }
+    
+    /* 排序按钮特别处理 */
+    #sortDropdown {
+        font-size: 0.75rem;
+    }
+    
+    /* 在特小屏幕上垂直排列所有按钮 */
+    .skin-item-actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+    }
+    
+    .skin-item-actions .btn-action {
+        width: 100%;
+    }
+}
+
+/* 确保在移动设备上允许换行，以避免水平溢出 */
+.card-header .d-flex.align-items-center.flex-wrap {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center;
+}
+
+/* 修改移动端上的表头样式 */
+@media (max-width: 768px) {
+    .skin-list-header {
+        font-size: 12px;
+    }
+    
+    .skin-header-name {
+        padding-left: 8px;
+    }
+}
+
+/* 移动端控制面板优化 */
+.mobile-controls {
+    width: 100%;
+}
+
+/* 更好的触控支持 */
+@media (max-width: 576px) {
+    .btn {
+        /* 确保按钮有足够大的触摸区域 */
+        min-height: 38px;
+    }
+    
+    /* 饰品列表中按钮优化 */
+    .skin-item-actions .btn-action {
+        min-height: 34px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* 更大的下拉菜单项 */
+    .dropdown-item {
+        padding: 8px 12px !important;
+    }
+}
+
+/* 使移动端卡片视图中的按钮更易点击 */
+.mobile-card-view .skin-item-actions .btn {
+    margin: 2px;
+    padding: 4px 8px;
+    width: auto;
+    min-width: 45px;
+    font-size: 12px;
+    line-height: 1;
+    text-align: center;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 28px;
+}
+
+/* 修复移动端垂直间距问题 */
+.mobile-card-view .skin-item-cell {
+    padding-top: 6px !important;
+    padding-bottom: 6px !important;
+}
+
+/* 移动端操作按钮的容器样式 */
+.mobile-card-view .skin-item-actions {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 4px !important;
+    padding-top: 8px !important;
+    padding-bottom: 4px !important;
+}
+
+/* 移动端卡片视图中的按钮优化 - 水平排列更小按钮 */
+.mobile-card-view .skin-item-actions {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 4px !important;
+    padding-top: 8px !important;
+    padding-bottom: 4px !important;
+}
+
+.mobile-card-view .skin-item-actions .btn-action {
+    flex: 0 0 auto !important;
+    min-width: 45px !important;
+    max-width: calc(50% - 4px) !important;
+    height: 28px !important;
+    padding: 2px 8px !important;
+    margin: 0 !important;
+    font-size: 12px !important;
+    line-height: 1 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* 优化移动端控制按钮布局 */
+@media (max-width: 576px) {
+    /* 控制按钮组 */
+    .mobile-controls .btn-sm {
+        padding: 0.2rem 0.5rem;
+        font-size: 0.75rem;
+        min-height: 28px;
+        min-width: auto;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* 确保排序下拉按钮显示正确 */
+    #sortDropdown {
+        padding: 0.2rem 0.5rem;
+        font-size: 0.75rem;
+        height: 28px !important;
+    }
+    
+    /* 调整按钮组间距 */
+    .mobile-controls .btn-group {
+        margin-right: 0.25rem !important;
+    }
+    
+    /* 确保按钮文本不会换行 */
+    .btn {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    /* 重写之前可能导致垂直堆叠的样式 */
+    .card-header .d-flex {
+        flex-direction: row !important; 
+    }
+    
+    .mobile-controls,
+    .mobile-controls > div {
+        display: block !important;
+        width: auto !important;
+    }
+    
+    .mobile-controls .d-flex.flex-wrap {
+        display: flex !important;
+    }
+    
+    .card-header .btn-group,
+    .card-header .dropdown {
+        width: auto !important;
+        margin-bottom: 4px;
+    }
+}
+
+/* 特小屏幕优化 (小于380px) */
+@media (max-width: 380px) {
+    .mobile-controls .btn-group,
+    .mobile-controls .d-flex {
+        margin-bottom: 0.25rem !important;
+    }
+    
+    .mobile-controls .btn-sm {
+        padding: 0.15rem 0.35rem;
+        font-size: 0.7rem;
+    }
+}
+
+/* 确保移动端控制面板按钮样式一致 */
+.mobile-controls .btn {
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.mobile-controls .flex-grow-1 {
+    flex: 1 1 0 !important;
+}
+
+/* 使下拉菜单与按钮保持相同高度 */
+.mobile-controls .dropdown-toggle {
+    height: 32px !important;
+}
+
+/* 移动端卡片视图中的数量标签优化 */
+.mobile-card-view .skin-item-name .skin-name-text {
+    display: inline-block;
+    max-width: calc(100% - 40px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.mobile-card-view .skin-item-name .badge {
+    flex-shrink: 0;
+    height: 20px;
+    min-width: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 6px;
+}
+
+/* 修复移动端垂直间距问题 */
+.mobile-card-view .skin-item-cell {
+    padding-top: 6px !important;
+    padding-bottom: 6px !important;
+}
+
+/* 优化合并模式下的数量显示 */
+.is-mobile-view .skin-item-name .d-flex {
+    width: 100%;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+}
+
+.is-mobile-view .skin-item-name .badge {
+    margin-left: 4px !important;
+    padding: 2px 6px !important;
+    font-size: 11px !important;
+} 

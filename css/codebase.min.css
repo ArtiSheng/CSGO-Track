@@ -1,0 +1,67 @@
+/*!
+ * Codebase 5.5 (https://themes.pixelcave.com/codebase/5.5/)
+ * Copyright 2014-2023 pixelcave
+ * Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+ */
+:root{--bs-blue:#5179d6;--bs-indigo:#6610f2;--bs-purple:#af5cad;--bs-pink:#e83e8c;--bs-red:#e56767;--bs-orange:#e27c78;--bs-yellow:#ffc107;--bs-green:#82b54b;--bs-teal:#20c997;--bs-cyan:#5ccdde;--bs-white:#fff;--bs-gray:#6c757d;--bs-gray-dark:#343a40;--bs-primary:#5179d6;--bs-secondary:#6c757d;--bs-success:#82b54b;--bs-info:#5ccdde;--bs-warning:#ffc107;--bs-danger:#e56767;--bs-light:#f8f9fa;--bs-dark:#343a40;--bs-primary-rgb:81,121,214;--bs-secondary-rgb:108,117,125;--bs-success-rgb:130,181,75;--bs-info-rgb:92,205,222;--bs-warning-rgb:255,193,7;--bs-danger-rgb:229,103,103;--bs-light-rgb:248,249,250;--bs-dark-rgb:52,58,64;--bs-white-rgb:255,255,255;--bs-black-rgb:0,0,0;--bs-body-color-rgb:52,58,64;--bs-body-bg-rgb:246,247,248;--bs-font-sans-serif:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";--bs-font-monospace:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;--bs-gradient:linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));--bs-body-font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,Liberation Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;--bs-body-font-size:1rem;--bs-body-font-weight:400;--bs-body-line-height:1.5;--bs-body-color:#343a40;--bs-body-bg:#f6f7f8;--bs-border-width:1px;--bs-border-style:solid;--bs-border-color:#e9ecef;--bs-border-color-translucent:rgba(0, 0, 0, 0.175);--bs-border-radius:0.25rem;--bs-border-radius-sm:0.2rem;--bs-border-radius-lg:0.3rem;--bs-border-radius-xl:0.35rem;--bs-border-radius-2xl:0.5rem;--bs-border-radius-pill:50rem;--bs-box-shadow:0 0.5rem 1rem rgba(0, 0, 0, 0.15);--bs-box-shadow-sm:0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);--bs-box-shadow-lg:0 1rem 3rem rgba(0, 0, 0, 0.175);--bs-box-shadow-inset:inset 0 1px 2px rgba(0, 0, 0, 0.075);--bs-emphasis-color:#000;--bs-form-control-bg:var(--bs-body-bg);--bs-form-control-disabled-bg:#e9ecef;--bs-highlight-bg:#fff3cd;--bs-breakpoint-xs:0;--bs-breakpoint-sm:576px;--bs-breakpoint-md:768px;--bs-breakpoint-lg:992px;--bs-breakpoint-xl:1200px;--bs-breakpoint-xxl:1400px}
+
+.text-primary{color:#5179d6!important}
+.text-secondary{color:#6c757d!important}
+.text-success{color:#82b54b!important}
+.text-info{color:#5ccdde!important}
+.text-warning{color:#ffc107!important}
+.text-danger{color:#e56767!important}
+.text-light{color:#f8f9fa!important}
+.text-dark{color:#343a40!important}
+
+.bg-primary{background-color:#5179d6!important}
+.bg-secondary{background-color:#6c757d!important}
+.bg-success{background-color:#82b54b!important}
+.bg-info{background-color:#5ccdde!important}
+.bg-warning{background-color:#ffc107!important}
+.bg-danger{background-color:#e56767!important}
+.bg-light{background-color:#f8f9fa!important}
+.bg-dark{background-color:#343a40!important}
+.bg-body{background-color:#f6f7f8!important}
+
+.btn-primary{color:#fff;background-color:#5179d6;border-color:#5179d6}
+.btn-primary:hover{color:#fff;background-color:#4567b6;border-color:#4162ab}
+.btn-success{color:#fff;background-color:#82b54b;border-color:#82b54b}
+.btn-success:hover{color:#fff;background-color:#6e9940;border-color:#68903c}
+.btn-info{color:#000;background-color:#5ccdde;border-color:#5ccdde}
+.btn-info:hover{color:#000;background-color:#74d4e3;border-color:#6cd1e1}
+.btn-warning{color:#000;background-color:#ffc107;border-color:#ffc107}
+.btn-warning:hover{color:#000;background-color:#ffca2c;border-color:#ffc720}
+.btn-danger{color:#fff;background-color:#e56767;border-color:#e56767}
+.btn-danger:hover{color:#fff;background-color:#c25858;border-color:#b65353}
+
+.card{position:relative;display:flex;flex-direction:column;min-width:0;word-wrap:break-word;background-color:#fff;background-clip:border-box;border:1px solid rgba(0,0,0,.125);border-radius:.25rem}
+.card-header{padding:.5rem 1rem;margin-bottom:0;background-color:rgba(0,0,0,.03);border-bottom:1px solid rgba(0,0,0,.125)}
+.card-body{flex:1 1 auto;padding:1rem 1rem}
+
+.container{width:100%;padding-right:var(--bs-gutter-x,.75rem);padding-left:var(--bs-gutter-x,.75rem);margin-right:auto;margin-left:auto}
+@media (min-width:576px){.container{max-width:540px}}
+@media (min-width:768px){.container{max-width:720px}}
+@media (min-width:992px){.container{max-width:960px}}
+@media (min-width:1200px){.container{max-width:1140px}}
+@media (min-width:1400px){.container{max-width:1320px}}
+
+.navbar{position:relative;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;padding-top:.5rem;padding-bottom:.5rem}
+.navbar-brand{padding-top:.3125rem;padding-bottom:.3125rem;margin-right:1rem;font-size:1.25rem;text-decoration:none;white-space:nowrap}
+.navbar-nav{display:flex;flex-direction:column;padding-left:0;margin-bottom:0;list-style:none}
+.navbar-dark .navbar-brand{color:#fff}
+.navbar-dark .navbar-nav .nav-link{color:rgba(255,255,255,.55)}
+.bg-dark{background-color:#343a40!important}
+
+.table{--bs-table-bg:transparent;--bs-table-accent-bg:transparent;--bs-table-striped-color:#212529;--bs-table-striped-bg:rgba(0,0,0,0.05);--bs-table-active-color:#212529;--bs-table-active-bg:rgba(0,0,0,0.1);--bs-table-hover-color:#212529;--bs-table-hover-bg:rgba(0,0,0,0.075);width:100%;margin-bottom:1rem;color:#212529;vertical-align:top;border-color:#dee2e6}
+.table>:not(caption)>*>*{padding:.5rem .5rem;background-color:var(--bs-table-bg);border-bottom-width:1px;box-shadow:inset 0 0 0 9999px var(--bs-table-accent-bg)}
+.table>:not(:first-child){border-top:2px solid currentColor}
+.table-hover>tbody>tr:hover{color:#212529;background-color:rgba(0,0,0,.075)}
+
+.hero-bubbles{position:relative;overflow:hidden}
+.hero-bubble{position:absolute;display:block;width:100px;height:100px;border-radius:50%;opacity:.4;z-index:0}
+.hero-bubble-sm{width:50px;height:50px}
+.hero-bubble-lg{width:200px;height:200px}
+
+.page-header-glass{position:absolute;top:0;right:0;left:0}
+.page-header-fixed{position:fixed;top:0;right:0;left:0;z-index:1030} 
