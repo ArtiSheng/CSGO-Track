@@ -1,0 +1,19 @@
+{
+  "name": "CSGO饰品追踪",
+  "short_name": "CSGO-Track",
+  "description": "追踪您的CSGO饰品投资和价格变化",
+  "start_url": "/index.php",
+  "display": "standalone",
+  "background_color": "#f6f7f8",
+  "theme_color": "#5179d6",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "img/icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "splash_pages": null
+} 

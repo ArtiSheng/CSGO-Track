@@ -1,0 +1,7 @@
+ PHP Warning:  Cannot modify header information - headers already sent by (output started at /www/wwwroot/csgo.artisheng.vip/config.php:20) in /www/wwwroot/csgo.artisheng.vip/fetch_base_info.php on line 20
+
+Warning: Cannot modify header information - headers already sent by (output started at /www/wwwroot/csgo.artisheng.vip/config.php:20) in /www/wwwroot/csgo.artisheng.vip/fetch_base_info.php on line 20
+{
+    "success": false,
+    "message": "SQLSTATE[42S22]: Column not found: 1054 Unknown column 'updated_at' in 'field list'"
+}

@@ -1,0 +1,146 @@
+[2025-05-18 05:55:01] === 开始价格更新 ===
+[2025-05-18 05:55:01] 找到 54 个未售出饰品需要更新价格
+[2025-05-18 05:55:01] 处理批次 1 / 2 (包含 50 个饰品)
+[2025-05-18 05:55:01] 数据库更新错误: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'last_update' in 'field list'
+[2025-05-18 05:55:01] 数据库更新错误: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'last_update' in 'field list'
+[2025-05-18 05:55:01] 数据库更新错误: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'last_update' in 'field list'
+[2025-05-18 05:55:01] 数据库更新错误: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'last_update' in 'field list'
+[2025-05-18 05:55:01] 数据库更新错误: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'last_update' in 'field list'
+[2025-05-18 05:55:01] 数据库更新错误: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'last_update' in 'field list'
+[2025-05-18 05:55:01] 数据库更新错误: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'last_update' in 'field list'
+[2025-05-18 05:55:01] 数据库更新错误: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'last_update' in 'field list'
+[2025-05-18 05:55:01] 数据库更新错误: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'last_update' in 'field list'
+[2025-05-18 05:55:01] 数据库更新错误: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'last_update' in 'field list'
+[2025-05-18 05:55:01] 数据库更新错误: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'last_update' in 'field list'
+[2025-05-18 05:55:01] 数据库更新错误: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'last_update' in 'field list'
+[2025-05-18 05:55:01] 数据库更新错误: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'last_update' in 'field list'
+[2025-05-18 05:55:01] 数据库更新错误: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'last_update' in 'field list'
+[2025-05-18 05:55:01] 数据库更新错误: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'last_update' in 'field list'
+[2025-05-18 05:55:01] 数据库更新错误: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'last_update' in 'field list'
+[2025-05-18 05:55:01] 数据库更新错误: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'last_update' in 'field list'
+[2025-05-18 05:55:01] 数据库更新错误: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'last_update' in 'field list'
+[2025-05-18 05:55:01] 数据库更新错误: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'last_update' in 'field list'
+[2025-05-18 05:55:01] 数据库更新错误: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'last_update' in 'field list'
+[2025-05-18 05:55:01] 数据库更新错误: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'last_update' in 'field list'
+[2025-05-18 05:55:03] 处理批次 2 / 2 (包含 4 个饰品)
+[2025-05-18 05:55:04] API响应错误: 当前接口请求已达到上限。详细规则请参阅接口文档。
+[2025-05-18 05:55:04] 完整响应: Array
+(
+    [success] => 
+    [data] => 
+    [errorCode] => 4005
+    [errorMsg] => 当前接口请求已达到上限。详细规则请参阅接口文档。
+    [errorData] => 
+    [errorCodeStr] => STEAM_STOCK_OPEN_APP_ERROR_4005
+)
+
+[2025-05-18 05:55:04] 价格更新完成：总计 54 个饰品，成功更新 0 个，失败 25 个
+[2025-05-18 05:55:04] === 价格更新结束，用时 2.69 秒 ===
+[2025-05-18 05:56:01] === 开始价格更新 ===
+[2025-05-18 05:56:01] 找到 54 个未售出饰品需要更新价格
+[2025-05-18 05:56:01] 处理批次 1 / 2 (包含 50 个饰品)
+[2025-05-18 05:56:01] API响应错误: 当前接口请求已达到上限。详细规则请参阅接口文档。
+[2025-05-18 05:56:01] 完整响应: Array
+(
+    [success] => 
+    [data] => 
+    [errorCode] => 4005
+    [errorMsg] => 当前接口请求已达到上限。详细规则请参阅接口文档。
+    [errorData] => 
+    [errorCodeStr] => STEAM_STOCK_OPEN_APP_ERROR_4005
+)
+
+[2025-05-18 05:56:01] 处理批次 2 / 2 (包含 4 个饰品)
+[2025-05-18 05:56:02] 数据库更新错误: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'last_update' in 'field list'
+[2025-05-18 05:56:02] 数据库更新错误: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'last_update' in 'field list'
+[2025-05-18 05:56:02] 数据库更新错误: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'last_update' in 'field list'
+[2025-05-18 05:56:02] 数据库更新错误: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'last_update' in 'field list'
+[2025-05-18 05:56:04] 价格更新完成：总计 54 个饰品，成功更新 0 个，失败 54 个
+[2025-05-18 05:56:04] === 价格更新结束，用时 2.6 秒 ===
+[2025-05-18 05:57:01] === 开始价格更新 ===
+[2025-05-18 05:57:01] 找到 54 个未售出饰品需要更新价格
+[2025-05-18 05:57:01] 处理批次 1 / 2 (包含 50 个饰品)
+[2025-05-18 05:57:01] API响应错误: 当前接口请求已达到上限。详细规则请参阅接口文档。
+[2025-05-18 05:57:01] 完整响应: Array
+(
+    [success] => 
+    [data] => 
+    [errorCode] => 4005
+    [errorMsg] => 当前接口请求已达到上限。详细规则请参阅接口文档。
+    [errorData] => 
+    [errorCodeStr] => STEAM_STOCK_OPEN_APP_ERROR_4005
+)
+
+[2025-05-18 05:57:01] 处理批次 2 / 2 (包含 4 个饰品)
+[2025-05-18 05:57:01] API响应错误: 当前接口请求已达到上限。详细规则请参阅接口文档。
+[2025-05-18 05:57:01] 完整响应: Array
+(
+    [success] => 
+    [data] => 
+    [errorCode] => 4005
+    [errorMsg] => 当前接口请求已达到上限。详细规则请参阅接口文档。
+    [errorData] => 
+    [errorCodeStr] => STEAM_STOCK_OPEN_APP_ERROR_4005
+)
+
+[2025-05-18 05:57:01] 价格更新完成：总计 54 个饰品，成功更新 0 个，失败 54 个
+[2025-05-18 05:57:01] === 价格更新结束，用时 0.59 秒 ===
+[2025-05-18 05:58:01] === 开始价格更新 ===
+[2025-05-18 05:58:01] 找到 54 个未售出饰品需要更新价格
+[2025-05-18 05:58:01] 处理批次 1 / 2 (包含 50 个饰品)
+[2025-05-18 05:58:02] 数据库更新错误: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'last_update' in 'field list'
+[2025-05-18 05:58:02] 数据库更新错误: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'last_update' in 'field list'
+[2025-05-18 05:58:02] 数据库更新错误: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'last_update' in 'field list'
+[2025-05-18 05:58:02] 数据库更新错误: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'last_update' in 'field list'
+[2025-05-18 05:58:02] 数据库更新错误: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'last_update' in 'field list'
+[2025-05-18 05:58:02] 数据库更新错误: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'last_update' in 'field list'
+[2025-05-18 05:58:02] 数据库更新错误: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'last_update' in 'field list'
+[2025-05-18 05:58:02] 数据库更新错误: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'last_update' in 'field list'
+[2025-05-18 05:58:02] 数据库更新错误: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'last_update' in 'field list'
+[2025-05-18 05:58:02] 数据库更新错误: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'last_update' in 'field list'
+[2025-05-18 05:58:02] 数据库更新错误: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'last_update' in 'field list'
+[2025-05-18 05:58:02] 数据库更新错误: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'last_update' in 'field list'
+[2025-05-18 05:58:02] 数据库更新错误: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'last_update' in 'field list'
+[2025-05-18 05:58:02] 数据库更新错误: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'last_update' in 'field list'
+[2025-05-18 05:58:02] 数据库更新错误: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'last_update' in 'field list'
+[2025-05-18 05:58:02] 数据库更新错误: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'last_update' in 'field list'
+[2025-05-18 05:58:02] 数据库更新错误: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'last_update' in 'field list'
+[2025-05-18 05:58:02] 数据库更新错误: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'last_update' in 'field list'
+[2025-05-18 05:58:02] 数据库更新错误: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'last_update' in 'field list'
+[2025-05-18 05:58:02] 数据库更新错误: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'last_update' in 'field list'
+[2025-05-18 05:58:02] 数据库更新错误: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'last_update' in 'field list'
+[2025-05-18 05:58:04] 处理批次 2 / 2 (包含 4 个饰品)
+[2025-05-18 05:58:04] API响应错误: 当前接口请求已达到上限。详细规则请参阅接口文档。
+[2025-05-18 05:58:04] 完整响应: Array
+(
+    [success] => 
+    [data] => 
+    [errorCode] => 4005
+    [errorMsg] => 当前接口请求已达到上限。详细规则请参阅接口文档。
+    [errorData] => 
+    [errorCodeStr] => STEAM_STOCK_OPEN_APP_ERROR_4005
+)
+
+[2025-05-18 05:58:04] 价格更新完成：总计 54 个饰品，成功更新 0 个，失败 25 个
+[2025-05-18 05:58:04] === 价格更新结束，用时 2.75 秒 ===
+[2025-05-18 05:59:01] === 开始价格更新 ===
+[2025-05-18 05:59:01] 找到 54 个未售出饰品需要更新价格
+[2025-05-18 05:59:01] 处理批次 1 / 2 (包含 50 个饰品)
+[2025-05-18 05:59:02] API响应错误: 当前接口请求已达到上限。详细规则请参阅接口文档。
+[2025-05-18 05:59:02] 完整响应: Array
+(
+    [success] => 
+    [data] => 
+    [errorCode] => 4005
+    [errorMsg] => 当前接口请求已达到上限。详细规则请参阅接口文档。
+    [errorData] => 
+    [errorCodeStr] => STEAM_STOCK_OPEN_APP_ERROR_4005
+)
+
+[2025-05-18 05:59:02] 处理批次 2 / 2 (包含 4 个饰品)
+[2025-05-18 05:59:02] 数据库更新错误: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'last_update' in 'field list'
+[2025-05-18 05:59:02] 数据库更新错误: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'last_update' in 'field list'
+[2025-05-18 05:59:02] 数据库更新错误: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'last_update' in 'field list'
+[2025-05-18 05:59:02] 数据库更新错误: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'last_update' in 'field list'
+[2025-05-18 05:59:04] 价格更新完成：总计 54 个饰品，成功更新 0 个，失败 54 个
+[2025-05-18 05:59:04] === 价格更新结束，用时 2.62 秒 ===
