@@ -62,8 +62,10 @@ define('STEAMDT_API_KEY', '您的API令牌');
 
 ## 📊 系统截图
 
-![PC端](img/PC.png)
-![PWA端](img/PWA.png)
+<p align="center">
+  <img src="img/PC.png" alt="PC端截图" width="48%" />
+  <img src="img/PWA.png" alt="PWA端截图" width="48%" />
+</p>
 
 ## 📋 数据库结构
 
